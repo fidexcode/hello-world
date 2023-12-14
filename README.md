@@ -4,5 +4,6 @@ I'm a frontend developer and a technical writer.
 * React
 * JavaScript
 * Tailwind CSS
+* Git and GitHub
 * CSS
 * HTML
