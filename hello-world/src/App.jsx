@@ -1,10 +1,18 @@
+import { people } from './Data.js';
 
-function App() {
-  return (
+export default function List(){
+  const listItems = people.map(person=>
+    <li key={person.id}>
+      <p>
+        <b>{person.name}</b> 
+        { ' ' + person.profession + ' ' }
+        known for {person.accomplishment}
+      </p>
+    </li>
+    )
+  return(
     <>
-    <h1>Hello world</h1>
+    <ul>{listItems}</ul>
     </>
   )
 }
-
-export default App
