@@ -1,0 +1,25 @@
+*{
+  background-color: #000;
+}
+.container{
+  color: white;
+  font-size: 3rem;
+}
+.fixed{
+  position: fixed;
+  top: 10rem;
+  left: 5rem;
+  font-size: 1.8rem;
+}
+.component{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.c-1{
+  height: 100vh;
+}
+.c-2{
+  background-color: #303030;
+  height: 20rem;
+}

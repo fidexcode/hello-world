@@ -1,43 +1,19 @@
-import { people } from './Data.js';
-
-export default function List(){
-
-  const chemist = people.filter(person=>
-    person.profession === 'chemist'
-    );
-
-    const everyOneElse = people.filter(person=>
-      person.profession !== 'chemist'
-      )
-  return(
-    <>
-    <article>
-      <h1>Scientist</h1>
-      <h2>Chemist</h2>
-      <ul>
-        {chemist.map(person=>
-        <li key={person.id}>
-          <p>
-            <b>{person.name}:</b>
-            { ' ' + person.profession + ' '}
-            known for { ' ' + person.accomplishment}
-          </p>
-        </li>
-          )}
-      </ul>
-      <h2>Every one else</h2>
-      <ul>
-        {everyOneElse.map(person=>
-        <li key={person.id}>
-          <p>{
-            <b>{person.name}:</b>}
-            { ' ' + person.profession + ' '}
-            known for {' ' + person.accomplishment}
-            </p>
-        </li>
-          )}
-      </ul>
-    </article>
-    </>
-  )
+import {useInView} from "react-intersection-observer"
+const App = () => {
+  const {ref, inView} = useInView({
+    threshold :1,
+    delay:1000,
+  })
+  return ( 
+    <div className="container">
+      <p className="fixed">Component 2 in viewport: {inView ? "✔" : "❌"}</p>
+      <div className="component c-1">Component 1</div>
+      <div ref={ref} className="component c-2">Component 2</div>
+      <div style={{
+        height : "120vh"
+      }}></div>
+    </div>
+   );
 }
+ 
+export default App;
